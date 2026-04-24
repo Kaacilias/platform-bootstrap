@@ -52,6 +52,9 @@ redis:
       size: 10Gi
 
 gitlab:
+  upgradeCheck:
+    enabled: fals
+
   webservice:
     ingress:
       enabled: false
