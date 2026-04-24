@@ -1,10 +1,6 @@
 global:
   edition: ce
 
-  gitlab:
-    upgradeCheck:
-      enabled: false
-
   hosts:
     domain: kube.home.ptiteigne.eu
     https: true
