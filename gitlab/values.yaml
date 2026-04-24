@@ -7,6 +7,7 @@ global:
 
   ingress:
     enabled: false
+    configureCertmanager: false
 
   certificates:
     enabled: false
@@ -14,8 +15,8 @@ global:
   certmanager:
     enabled: false
 
-  ingress:
-    configureCertmanager: false
+  minio:
+    enabled: false   # ✅ NEW, correct location
 
   storageClass: rook-ceph-block
 
@@ -60,9 +61,6 @@ registry:
     enabled: true
     storageClass: rook-ceph-block
     size: 50Gi
-
-minio:
-  enabled: false
 
 prometheus:
   install: false
