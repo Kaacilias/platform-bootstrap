@@ -1,11 +1,19 @@
 global:
   edition: ce
 
+  gitlab:
+    upgradeCheck:
+      enabled: false
+
   hosts:
     domain: kube.home.ptiteigne.eu
     https: true
 
   ingress:
+    enabled: false
+    configureCertmanager: false
+
+  certificates:
     enabled: false
 
   certmanager:
@@ -23,7 +31,41 @@ global:
 
   storageClass: rook-ceph-block
 
+certmanager:
+  install: false
+
+certmanager-issuer:
+  enabled: false
+
+nginx-ingress:
+  enabled: false
+
+postgresql:
+  install: true
+  persistence:
+    enabled: true
+    storageClass: rook-ceph-block
+    size: 20Gi
+
+redis:
+  install: true
+  master:
+    persistence:
+      enabled: true
+      storageClass: rook-ceph-block
+      size: 10Gi
+
 gitlab:
+  webservice:
+    ingress:
+      enabled: false
+
+  gitaly:
+    persistence:
+      enabled: true
+      storageClass: rook-ceph-block
+      size: 200Gi
+
   toolbox:
     backups:
       objectStorage:
@@ -32,24 +74,13 @@ gitlab:
           secret: gitlab-object-storage
           key: connection
 
-postgresql:
-  install: true
-  persistence:
-    enabled: true
-    size: 20Gi
-
-redis:
-  install: true
-  master:
-    persistence:
-      enabled: true
-      size: 10Gi
-
 registry:
   enabled: true
   persistence:
     enabled: true
+    storageClass: rook-ceph-block
     size: 50Gi
 
-nginx-ingress:
-  enabled: false
+prometheus:
+  install: false
+
