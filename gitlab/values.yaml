@@ -1,0 +1,51 @@
+global:
+  edition: ce
+  hosts:
+    domain: kube.home.ptiteigne.eu
+    https: true
+  ingress:
+    enabled: false
+  certificates:
+    enabled: false
+  storageClass: rook-ceph-block
+
+certmanager:
+  install: false
+
+nginx-ingress:
+  enabled: false
+
+postgresql:
+  install: true
+  persistence:
+    enabled: true
+    storageClass: rook-ceph-block
+    size: 20Gi
+
+redis:
+  install: true
+  master:
+    persistence:
+      enabled: true
+      storageClass: rook-ceph-block
+      size: 10Gi
+
+gitlab:
+  webservice:
+    ingress:
+      enabled: false
+  gitaly:
+    persistence:
+      enabled: true
+      storageClass: rook-ceph-block
+      size: 200Gi
+
+registry:
+  enabled: true
+  persistence:
+    enabled: true
+    storageClass: rook-ceph-block
+    size: 50Gi
+
+minio:
+  enabled: false

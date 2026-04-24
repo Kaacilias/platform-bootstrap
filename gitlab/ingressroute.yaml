@@ -1,0 +1,18 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: gitlab
+  namespace: gitlab
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`gitlab.kube.home.ptiteigne.eu`)
+      kind: Rule
+      services:
+        - name: gitlab-webservice-default
+          port: 8080
+      middlewares:
+        - name: secure-headers
+          namespace: ingress
+  tls: {}
