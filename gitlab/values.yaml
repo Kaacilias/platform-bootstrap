@@ -27,8 +27,7 @@ global:
 
   storageClass: rook-ceph-block
 
-certmanager:
-  install: false
+installCertmanager: false
 
 certmanager-issuer:
   enabled: false
