@@ -22,6 +22,21 @@ global:
     object_store:
       enabled: false
 
+    artifacts:
+      enabled: false
+    lfs:
+      enabled: false
+    uploads:
+      enabled: false
+    packages:
+      enabled: false
+    externalDiffs:
+      enabled: false
+    terraformState:
+      enabled: false
+    dependencyProxy:
+      enabled: false
+
   storageClass: rook-ceph-block
 
 certmanager:
