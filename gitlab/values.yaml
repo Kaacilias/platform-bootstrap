@@ -20,22 +20,10 @@ global:
 
   appConfig:
     object_store:
-      enabled: false
-
-    artifacts:
-      enabled: false
-    lfs:
-      enabled: false
-    uploads:
-      enabled: false
-    packages:
-      enabled: false
-    externalDiffs:
-      enabled: false
-    terraformState:
-      enabled: false
-    dependencyProxy:
-      enabled: false
+      enabled: true
+      connection:
+        secret: gitlab-object-storage
+        key: connection
 
   storageClass: rook-ceph-block
 
@@ -76,7 +64,11 @@ gitlab:
 
   toolbox:
     backups:
-      enabled: false
+      objectStorage:
+        enabled: true
+        config:
+          secret: gitlab-object-storage
+          key: connection
 
 registry:
   enabled: true
