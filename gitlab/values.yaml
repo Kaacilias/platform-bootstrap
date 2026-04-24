@@ -1,5 +1,9 @@
 global:
   edition: ce
+    
+  gitlab:
+    upgradeCheck:
+      enabled: false
 
   hosts:
     domain: kube.home.ptiteigne.eu
@@ -52,9 +56,6 @@ redis:
       size: 10Gi
 
 gitlab:
-  upgradeCheck:
-    enabled: false
-
   webservice:
     ingress:
       enabled: false
