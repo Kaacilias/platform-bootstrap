@@ -16,7 +16,11 @@ global:
     enabled: false
 
   minio:
-    enabled: false   # ✅ NEW, correct location
+    enabled: false
+
+  appConfig:
+    object_store:
+      enabled: false
 
   storageClass: rook-ceph-block
 
@@ -54,6 +58,10 @@ gitlab:
       enabled: true
       storageClass: rook-ceph-block
       size: 200Gi
+
+  toolbox:
+    backups:
+      enabled: false
 
 registry:
   enabled: true
