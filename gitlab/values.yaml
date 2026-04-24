@@ -1,16 +1,29 @@
 global:
   edition: ce
+
   hosts:
     domain: kube.home.ptiteigne.eu
     https: true
+
   ingress:
     enabled: false
+
   certificates:
     enabled: false
+
+  certmanager:
+    enabled: false
+
+  ingress:
+    configureCertmanager: false
+
   storageClass: rook-ceph-block
 
 certmanager:
   install: false
+
+certmanager-issuer:
+  enabled: false
 
 nginx-ingress:
   enabled: false
@@ -34,6 +47,7 @@ gitlab:
   webservice:
     ingress:
       enabled: false
+
   gitaly:
     persistence:
       enabled: true
@@ -49,3 +63,7 @@ registry:
 
 minio:
   enabled: false
+
+prometheus:
+  install: false
+
