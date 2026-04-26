@@ -20,17 +20,28 @@ global:
 
   appConfig:
     gitlab:
+      host: gitlab.kube.home.ptiteigne.eu
+      protocol: https
       trusted_proxies:
         - 10.0.0.0/8
         - 172.16.0.0/12
         - 192.168.0.0/16
         - 127.0.0.1
 
-    externalUrl: "https://gitlab.kube.home.ptiteigne.eu"
-
     nginx:
       proxy_set_headers:
-        X-Forwarded-Proto: https
+        X-Forwarded-Proto: "https"
+        X-Forwarded-Ssl: "on"
+        Host: "gitlab.kube.home.ptiteigne.eu"
+
+      real_ip_trusted_addresses:
+        - 10.0.0.0/8
+        - 172.16.0.0/12
+        - 192.168.0.0/16
+        - 127.0.0.1
+
+      real_ip_header: X-Forwarded-For
+      real_ip_recursive: "on"
 
     object_store:
       enabled: true
