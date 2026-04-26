@@ -114,6 +114,9 @@ gitlab-runner:
   rbac:
     create: true
 
+  podSecurityContext:
+    fsGroup: 65533
+
   runners:
     privileged: true   # required for docker-in-docker
     secret: gitlab-runner-secret
