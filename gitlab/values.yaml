@@ -30,7 +30,7 @@ global:
 installCertmanager: false
 
 certmanagerIssuer:
-  enabled: false
+  install: false
 
 nginx-ingress:
   enabled: false
