@@ -15,4 +15,5 @@ spec:
       middlewares:
         - name: forwarded-http
           namespace: ingress
+          stipPrefix: false
   tls: {}
