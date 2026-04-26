@@ -13,6 +13,6 @@ spec:
         - name: gitlab-webservice-default
           port: 8080
       middlewares:
-        - name: secure-headers
+        - name: forwarded-http
           namespace: ingress
   tls: {}
