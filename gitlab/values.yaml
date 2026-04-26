@@ -29,8 +29,7 @@ global:
 
 installCertmanager: false
 
-certmanagerIssuer:
-  enabled: false
+certmanagerIssuer: false
 
 nginx-ingress:
   enabled: false
