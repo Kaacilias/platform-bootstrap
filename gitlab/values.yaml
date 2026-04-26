@@ -108,3 +108,24 @@ registry:
 prometheus:
   install: false
 
+gitlab-runner:
+  install: true
+
+  rbac:
+    create: true
+
+  runners:
+    privileged: true   # required for docker-in-docker
+    secret: gitlab-runner-secret
+    executor: kubernetes
+
+    config: |
+      [[runners]]
+        name = "k8s-runner"
+        url = "https://gitlab.kube.home.ptiteigne.eu/"
+        token = ""
+        executor = "kubernetes"
+        [runners.kubernetes]
+          namespace = "gitlab"
+          image = "alpine:3.19"
+          privileged = true
