@@ -111,6 +111,10 @@ prometheus:
 gitlab-runner:
   install: true
 
+  env:
+    - name: GODEBUG
+      value: "netdns=go+v2,noipv6"
+
   rbac:
     create: true
 
