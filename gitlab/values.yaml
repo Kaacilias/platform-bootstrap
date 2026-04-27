@@ -3,21 +3,13 @@ global:
 
   hosts:
     domain: kube.home.ptiteigne.eu
-    https: false
+    https: true
 
   ingress:
     enabled: false
-    provider: traefik
-    class: traefik
-    configureCertmanager: false
-    tls:
-      secretName: kube-platform-wildcard-tls
 
   certificates:
     enabled: false
-      #    customCAs:
-      #      - secret: gitlab-runner-custom-certs
-      #        key: ca.crt
 
   certmanager:
     enabled: false
