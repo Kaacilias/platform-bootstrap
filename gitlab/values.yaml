@@ -6,10 +6,10 @@ global:
     https: true
 
   ingress:
-    enabled: true
-    provider: traefik
-    class: traefik
-    configureCertmanager: false
+    enabled: false
+      #    provider: traefik
+      #    class: traefik
+      #    configureCertmanager: false
 
   certificates:
     enabled: true
@@ -82,10 +82,10 @@ redis:
 
 gitlab:
   webservice:
+    service:
+      type: ClusterIP
     ingress:
-      enabled: true
-      tls:
-        enabled: true
+      enabled: false
 
   gitaly:
     persistence:
