@@ -53,8 +53,8 @@ global:
 
 installCertmanager: false
 
-certmanager:
-  issuer: "test@example.com"
+certmanager-issuer:
+  email: "test@example.com"
 
 certmanagerIssuer:
   install: false
