@@ -12,7 +12,10 @@ global:
     configureCertmanager: false
 
   certificates:
-    enabled: false
+    enabled: true
+    customCAs:
+      - secret: gitlab-runner-custom-certs
+        key: ca.crt
 
   certmanager:
     enabled: false
@@ -117,11 +120,8 @@ gitlab-runner:
     - name: SSL_CERT_DIR
       value: "/etc/gitlab-runner/certs"
 
-
   rbac:
     create: true
-
-  certsSecretName: gitlab-runner-custom-certs
 
   runners:
     privileged: true   # required for docker-in-docker
