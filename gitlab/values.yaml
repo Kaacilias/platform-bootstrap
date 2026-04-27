@@ -6,7 +6,7 @@ global:
     https: false
 
   ingress:
-    enabled: true
+    enabled: false
     provider: traefik
     class: traefik
     configureCertmanager: false
