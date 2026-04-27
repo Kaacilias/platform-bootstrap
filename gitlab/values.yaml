@@ -114,6 +114,9 @@ gitlab-runner:
   env:
     - name: GODEBUG
       value: "netdns=go+v2,noipv6"
+    - name: SSL_CERT_DIR
+      value: "/etc/gitlab-runner/certs"
+
 
   rbac:
     create: true
