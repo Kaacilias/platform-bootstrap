@@ -53,6 +53,9 @@ global:
 
 installCertmanager: false
 
+certmanager:
+  issuer: "test@example.com"
+
 certmanagerIssuer:
   install: false
 
