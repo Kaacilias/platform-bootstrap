@@ -6,10 +6,12 @@ global:
     https: false
 
   ingress:
-    enabled: false
-      #    provider: traefik
-      #    class: traefik
-      #    configureCertmanager: false
+    enabled: true
+    provider: traefik
+    class: traefik
+    configureCertmanager: false
+    tls:
+      secretName: kube-platform-wildcard-tls
 
   certificates:
     enabled: false
