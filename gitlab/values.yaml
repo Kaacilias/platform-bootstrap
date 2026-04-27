@@ -120,9 +120,6 @@ gitlab-runner:
     - name: SSL_CERT_DIR
       value: "/etc/gitlab-runner/certs"
 
-  rbac:
-    create: true
-
   runners:
     privileged: true   # required for docker-in-docker
     secret: gitlab-runner-secret
