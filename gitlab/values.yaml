@@ -116,12 +116,6 @@ prometheus:
 gitlab-runner:
   install: true
 
-  env:
-    - name: GODEBUG
-      value: "netdns=go+v2,noipv6"
-    - name: SSL_CERT_DIR
-      value: "/etc/gitlab-runner/certs"
-
   runners:
     privileged: true   # required for docker-in-docker
     secret: gitlab-runner-secret
@@ -135,7 +129,7 @@ gitlab-runner:
     config: |
       [[runners]]
         name = "k8s-runner"
-        url = "https://gitlab.kube.home.ptiteigne.eu/"
+        url = "http://gitlab-webservice-default.gitlab.svc.cluster.local:8080"
         token = ""
         executor = "kubernetes"
         [runners.kubernetes]
