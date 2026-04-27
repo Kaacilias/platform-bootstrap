@@ -114,8 +114,7 @@ gitlab-runner:
   rbac:
     create: true
 
-  podSecurityContext:
-    fsGroup: 65533
+  certsSecretName: gitlab-runner-custom-certs
 
   runners:
     privileged: true   # required for docker-in-docker
@@ -128,18 +127,8 @@ gitlab-runner:
         url = "https://gitlab.kube.home.ptiteigne.eu/"
         token = ""
         executor = "kubernetes"
-        tls-ca-file = "/etc/gitlab-runner/certs/platform-root-ca.crt"
         [runners.kubernetes]
           namespace = "gitlab"
           image = "alpine:3.19"
           privileged = true
 
-  volumeMounts:
-    - name: runner-ca
-      mountPath: /etc/gitlab-runner/certs
-      readOnly: true
-
-  volumes:
-    - name: runner-ca
-      configMap:
-        name: gitlab-runner-ca
