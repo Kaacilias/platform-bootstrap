@@ -3,7 +3,7 @@ global:
 
   hosts:
     domain: kube.home.ptiteigne.eu
-    https: true
+    https: false
 
   ingress:
     enabled: false
