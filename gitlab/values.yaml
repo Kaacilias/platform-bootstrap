@@ -12,10 +12,10 @@ global:
       #    configureCertmanager: false
 
   certificates:
-    enabled: true
-    customCAs:
-      - secret: gitlab-runner-custom-certs
-        key: ca.crt
+    enabled: false
+      #    customCAs:
+      #      - secret: gitlab-runner-custom-certs
+      #        key: ca.crt
 
   certmanager:
     enabled: false
