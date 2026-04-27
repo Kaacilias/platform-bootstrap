@@ -115,6 +115,10 @@ gitlab-runner:
     - name: GODEBUG
       value: "netdns=go+v2,noipv6"
 
+  securityContext:
+    runAsUser: 0
+
+
   rbac:
     create: true
 
