@@ -115,10 +115,6 @@ gitlab-runner:
     - name: GODEBUG
       value: "netdns=go+v2,noipv6"
 
-  securityContext:
-    runAsUser: 0
-
-
   rbac:
     create: true
 
@@ -128,6 +124,11 @@ gitlab-runner:
     privileged: true   # required for docker-in-docker
     secret: gitlab-runner-secret
     executor: kubernetes
+
+    securityContext:
+      runAsUser: 0
+      runAsGroup: 0
+      allowPrivilegeEscalation: true
 
     config: |
       [[runners]]
