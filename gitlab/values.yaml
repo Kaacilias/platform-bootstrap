@@ -116,6 +116,8 @@ prometheus:
 gitlab-runner:
   install: true
 
+  gitlabUrl: "http://gitlab-webservice-default.gitlab.svc.cluster.local:8080"
+
   runners:
     privileged: true   # required for docker-in-docker
     secret: gitlab-runner-secret
