@@ -60,6 +60,9 @@ redis:
       size: 10Gi
 
 gitlab:
+  gitlab-rails:
+    external_url: "https://gitlab.kube.home.ptiteigne.eu"
+
   webservice:
     service:
       type: ClusterIP
