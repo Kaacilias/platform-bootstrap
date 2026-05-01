@@ -64,6 +64,7 @@ gitlab:
     external_url: https://gitlab.kube.home.ptiteigne.eu
 
   webservice:
+    external_url: https://gitlab.kube.home.ptiteigne.eu
     service:
       type: ClusterIP
     ingress:
