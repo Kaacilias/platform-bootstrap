@@ -61,7 +61,7 @@ redis:
 
 gitlab:
   gitlab-rails:
-    external_url: "https://gitlab.kube.home.ptiteigne.eu"
+    external_url: https://gitlab.kube.home.ptiteigne.eu
 
   webservice:
     service:
